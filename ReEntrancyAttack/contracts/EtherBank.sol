@@ -2,6 +2,7 @@
 pragma solidity ^0.8.11;
 
 
+// This show the Bad contract
 contract EtherBank {
 
     mapping(address => uint256) public balances;

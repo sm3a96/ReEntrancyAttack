@@ -2,21 +2,19 @@
 pragma solidity ^0.8.11;
 import "@openzeppelin/contracts/security/ReentrancyGuard.sol";
 
-
 contract EtherBankSecured is ReentrancyGuard {
 
     mapping(address => uint256) public balances;
 
-    // The 'locked' bool variable is a mutex that will help us prevent re entrancy
+    // Solution 1 - We have to wrap every function with reentrancyGuard 
+    // The 'locked' bool variable is a mutex(this to prevent re entrancy attacks)
     bool internal locked;
-    // Fix 1 - We have to wrap every function with reentrancyGuard modifier to protect it from reentrancy
     modifier reentrancyGuard() {
         require(!locked);
         locked = true;
         _;
         locked = false;
     }
-
 
     function depositETH() public payable {
         balances[msg.sender] += msg.value;
@@ -27,10 +25,10 @@ contract EtherBankSecured is ReentrancyGuard {
 
         uint256 balance = balances[msg.sender];
 
-        // Fix 1 - Update Balance Before Sending ETH
+        // Solution 1 - Update Balance Before Sending ETH
         balances[msg.sender] = 0;
 
-        // Fix 2 - Use transfer() function instead of the call() function
+        // Solution 2 - Use transfer() function instead of the call() function
         payable(msg.sender).transfer(balance);
     }
 }

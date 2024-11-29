@@ -2,8 +2,8 @@
   "_format": "hh-sol-cache-2",
   "files": {
     "/mnt/c/Users/Sam/Desktop/ReEntrancyAttack/ReEntrancyAttack/contracts/EtherBank.sol": {
-      "lastModificationDate": 1732765896193,
-      "contentHash": "dab3ebe63bcf1a893c0f2f4b6e1bbc0a",
+      "lastModificationDate": 1732848794319,
+      "contentHash": "050c66520de656928346c3d10b3b4fc0",
       "sourceName": "contracts/EtherBank.sol",
       "solcConfig": {
         "version": "0.8.11",
@@ -73,8 +73,8 @@
       ]
     },
     "/mnt/c/Users/Sam/Desktop/ReEntrancyAttack/ReEntrancyAttack/contracts/solution/EtherBankSecured.sol": {
-      "lastModificationDate": 1732765896331,
-      "contentHash": "deb8a61264d882601969cedcae6ec7b6",
+      "lastModificationDate": 1732858807237,
+      "contentHash": "e25e1067ca3893cc5a84d505e3c600e6",
       "sourceName": "contracts/solution/EtherBankSecured.sol",
       "solcConfig": {
         "version": "0.8.11",
